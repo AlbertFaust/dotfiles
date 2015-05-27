@@ -4,15 +4,15 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
-import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders
+import XMonad.Layout.Spacing
 import System.IO
- 
+
 main = do
         xmproc <- spawnPipe "/usr/bin/xmobar ~/ .xmobarrc"
         xmonad $ defaultConfig
                 { manageHook = manageDocks <+> manageHook defaultConfig
-                , layoutHook = avoidStruts ( smartBorders (Full ||| Mirror tiled ))
+                , layoutHook = spacing 5 $ avoidStruts ( smartBorders (tiled ||| Full ))
                 , logHook = dynamicLogWithPP xmobarPP
                                 { ppOutput = hPutStrLn xmproc
                                 , ppTitle = xmobarColor "red" "" . shorten 50
