@@ -11,7 +11,8 @@ import System.IO
 main = do
         xmproc <- spawnPipe "/usr/bin/xmobar ~/ .xmobarrc"
         xmonad $ defaultConfig
-                { manageHook = manageDocks <+> manageHook defaultConfig
+                { myTerminal = "urxvt -e /bin/bash/"
+                , manageHook = manageDocks <+> manageHook defaultConfig
                 , layoutHook = spacing 5 $ avoidStruts ( smartBorders (tiled ||| Full ))
                 , logHook = dynamicLogWithPP xmobarPP
                                 { ppOutput = hPutStrLn xmproc
