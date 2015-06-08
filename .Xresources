@@ -4,6 +4,14 @@ URxvt.foreground: White
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 
+Xft.dpi: 180
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
 #define base00 #181818
 #define base01 #282828
 #define base02 #383838
