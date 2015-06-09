@@ -13,7 +13,7 @@ main = do
         xmonad $ defaultConfig
                 { myTerminal = "urxvt -e /bin/bash/"
                 , manageHook = manageDocks <+> manageHook defaultConfig
-                , layoutHook = spacing 5 $ avoidStruts ( smartBorders (tiled ||| Full ))
+                , layoutHook = spacing 5 $ avoidStruts ( smartBorders (tiled ||| Full ||| layoutHook defaultConfig))
                 , logHook = dynamicLogWithPP xmobarPP
                                 { ppOutput = hPutStrLn xmproc
                                 , ppTitle = xmobarColor "red" "" . shorten 50
