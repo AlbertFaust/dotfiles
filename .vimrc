@@ -19,3 +19,4 @@ noremap ^ <nop>
 nnoremap gV `[v`]
 set wildmenu
 set autoindent
+set virtualedit=onemore
