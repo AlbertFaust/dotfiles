@@ -5,7 +5,7 @@ Config { font = "Bitstream Vesa Sans Mono:size=9:bold:antialias=true"
     , lowerOnStart = False
     , commands = [ Run Date "%a %b %_d %l:%M" "date" 10
             , Run Com "uname" ["-s","-r"]""36000
-            , Run Battery ["-t","<left>%","-L","50","-H","75","-h","green","-n","yell","-l","red"] 10
+            , Run Battery ["-t","Battery: %","-L","25","-H","75","--low","#FF0000","--normal","#F9FF00","--high","#00FF00"] 600
             , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
             ]
     , sepChar = "%"
