@@ -1,14 +1,14 @@
 Config { font = "Bitstream Vesa Sans Mono:size=9:bold:antialias=true"
-    , bgColor = "black"
-    , fgColor = "grey"
-    , position = TopW L 120
-    , lowerOnStart = False
-    , commands = [ Run Date "%a %b %_d %l:%M" "date" 10
-            , Run Com "uname" ["-s","-r"]""36000
-            , Run Battery ["-t","Battery: %","-L","25","-H","75","--low","#FF0000","--normal","#F9FF00","--high","#00FF00"] 600
-            , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
-            ]
-    , sepChar = "%"
-    , alignSep = "}{"
-    , template = "}{ %cpu% | <fc=#ee9a00>%date%</fc> | %uname% | <fc=#ee9a00>Battery:</fc> %battery%"                                                           
-    }
+        , bgColor = "black"
+        , fgColor = "grey"
+        , position = TopW L 120
+        , lowerOnStart = False
+        , commands = [ Run Date "%a %b %_d %l:%M" "date" 10
+        , Run Com "uname" ["-s","-r"]""36000
+    , Run Battery ["-t","Batt: % / ","-L","25","-H","75","-h","green","-n","yellow","-l","red","--","-c","energy_full"] 10
+    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                        ]
+        , sepChar = "%"
+        , alignSep = "}{"
+        , template = "}{ %cpu% | <fc=#ee9a00>%date%</fc> | %uname% | %Battery:% "
+        }
