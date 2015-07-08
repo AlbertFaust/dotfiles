@@ -10,5 +10,5 @@ Config { font = "Bitstream Vesa Sans Mono:size=9:bold:antialias=true"
                         ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "}{ %cpu% | <fc=#ee9a00>%date%</fc> | %uname% | %Battery% "
+        , template = "}{ %cpu% | <fc=#ee9a00>%date%</fc> | %uname% | %battery% "
         }
