@@ -1,1 +1,2 @@
+#https://github.com/AlbertFaust/thinkpad/blob/master/scripts/paste.sh
 echo | $* | curl -F c=@- https://ptpb.pw
